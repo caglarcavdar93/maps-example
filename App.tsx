@@ -71,7 +71,12 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} initialRegion={INITIAL_POSITION} ref={mapRef}>
+      <MapView
+        style={styles.map}
+        provider={PROVIDER_GOOGLE}
+        initialRegion={INITIAL_POSITION}
+        ref={mapRef}
+      >
         {origin && <Marker coordinate={origin} />}
         {destination && <Marker coordinate={destination} />}
         {origin && destination && showDirections && (

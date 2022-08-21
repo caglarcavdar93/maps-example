@@ -21,10 +21,10 @@ function InputAutoComplete({
       <Text>{label}</Text>
       <GooglePlacesAutocomplete
         styles={{ textInput: styles.input }}
+        fetchDetails
         placeholder={placeholder || ""}
         onPress={(data, details = null) => {
           // 'details' is provided when fetchDetails = true
-          console.log(data, details);
           onPlaceSelected(details);
         }}
         query={{
